@@ -1,0 +1,70 @@
+:root {
+    --bg-color: #0d0d0d;
+    --card-color: #1a1a1a;
+    --text-color: #ffffff;
+    --accent-color: #ff0000;
+}
+
+.light-theme {
+    --bg-color: #ffffff;
+    --card-color: #f0f0f0;
+    --text-color: #1a1a1a;
+    --accent-color: #0078d4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+
+.encabezado { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px; 
+    background: var(--card-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.encabezado_enlace { font-size: 1.5rem; font-weight: bold; color: var(--accent-color); text-decoration: none; text-transform: uppercase; }
+
+.navbar { background: var(--accent-color); padding: 10px; position: sticky; top: 75px; z-index: 99; }
+.navbar ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 15px; }
+.navbar a { color: #000; text-decoration: none; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; }
+
+.principal { max-width: 1400px; margin: 0 auto; padding-bottom: 50px; }
+
+.banner { 
+    text-align: center; 
+    padding: 80px 20px; 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200') center/cover no-repeat;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.catalogo { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 25px; 
+    padding: 0 20px;
+}
+
+.juego-card { 
+    background: var(--card-color); 
+    padding: 15px; 
+    border-radius: 10px; 
+    text-align: center; 
+    border: 1px solid #333; 
+    transition: transform 0.3s;
+}
+
+.juego-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+
+.juego-card img { width: 100%; height: 320px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+.juego-card h3 { color: var(--accent-color); font-size: 1.2rem; margin-bottom: 10px; }
+.juego-card p { font-size: 0.9rem; color: #aaa; }
+
+.btn-theme { padding: 8px 15px; cursor: pointer; background: var(--accent-color); border: none; font-weight: bold; border-radius: 5px; }
+
+.footer { text-align: center; padding: 40px; font-size: 0.85rem; opacity: 0.8; background: var(--card-color); margin-top: 40px; }
