@@ -78,11 +78,20 @@ body { background-color: var(--bg-color); color: var(--text-color); transition: 
     border-radius: 10px;
 }
 
-.carrito-ui { 
-    width: 300px; 
-    border: 2px solid #333; 
-    padding: 20px; 
-    background: #e90404; 
+#cart-icon {
+    position: initial;
+    top: 20px;
+    right: 20px;
+    color: #fcfcfc;
+    font-size: 15px;
+    text-decoration: none;
+    background-color: #5bf800;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: #000;
 }
-ul { list-style: none; padding: 0; }
-li { margin-bottom: 5px; border-bottom: 1px solid #22d80a; }
+
+#cart-icon i {
+    margin-right: 5px;
+}
+

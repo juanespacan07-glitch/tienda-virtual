@@ -3,41 +3,16 @@ function toggleTheme() {
 }
 
 let carrito = [];
-let total = 0;
 
-function agregarAlCarrito(producto, precio) {
-    carrito.push({ nombre: producto, precio: precio });
-    total += precio;
-    renderizarCarrito();
-}
+const cartCount = document.getElementById("cart-count");
+const cartItems = document.getElementById("cart-items");
+const cartModel = document.getElementById("cart-model");
+const closeCart = document.getElementById("close-cart");
+const checkoutButton = document.getElementById("checkout");
+const totalElemnt = document.getElementById("purchase-model");
+const closePurchase = document.getElementById("close-purchase")
 
+document.querySelectorAll(". add-to-cart").forEach((button) => {
 
-function renderizarCarrito() {
-    const lista = document.getElementById('lista-carrito');
-    const totalHTML = document.getElementById('precio-total');
-    
-
-    lista.innerHTML = '';
-
-    carrito.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `${item.nombre} - $${item.precio} 
-                        <button onclick="eliminarDelCarrito(${index})">x</button>`;
-        lista.appendChild(li);
-    });
-
-    totalHTML.innerText = total;
-}
-
-function eliminarDelCarrito(indice) {
-    total -= carrito[indice].precio;
-    carrito.splice(indice, 1);
-    renderizarCarrito();
-}
-
-
-function limpiarCarrito() {
-    carrito = [];
-    total = 0;
-    renderizarCarrito();
-}
+    button.addEventListener("click")
+})
