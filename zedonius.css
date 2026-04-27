@@ -38,7 +38,7 @@ body { background-color: var(--bg-color); color: var(--text-color); transition: 
 .banner { 
     text-align: center; 
     padding: 80px 20px; 
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://pbs.twimg.com/media/HGnyiJOXgAAjmFz.jpg') center/cover no-repeat;
     color: white;
     margin-bottom: 30px;
 }
@@ -68,3 +68,12 @@ body { background-color: var(--bg-color); color: var(--text-color); transition: 
 .btn-theme { padding: 8px 15px; cursor: pointer; background: var(--accent-color); border: none; font-weight: bold; border-radius: 5px; }
 
 .footer { text-align: center; padding: 40px; font-size: 0.85rem; opacity: 0.8; background: var(--card-color); margin-top: 40px; }
+
+.product-button a {
+    display: block;
+    padding: 15px 20px;
+    background-color: #0078d4;
+    color: #f0f0f0;
+    text-decoration: none; 
+    border-radius: 10px;
+}
