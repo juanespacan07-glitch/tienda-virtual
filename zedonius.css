@@ -27,6 +27,26 @@ body { background-color: var(--bg-color); color: var(--text-color); transition: 
     z-index: 100;
 }
 
+.encabezado {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+}
+
+.logo-img {
+    height: 50px;          
+    width: auto;
+    border-radius: 5px;    
+}
+
+.acciones-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 .encabezado_enlace { font-size: 1.5rem; font-weight: bold; color: var(--accent-color); text-decoration: none; text-transform: uppercase; }
 
 .navbar { background: var(--accent-color); padding: 10px; position: sticky; top: 75px; z-index: 99; }
