@@ -56,5 +56,51 @@ window.quitar = function(id) {
     renderizarCarrito();
 };
 
+function renderizarCarrito() {
+    listaCarrito.innerHTML = '';
+    let sumaTotal = 0;
+
+    carrito.forEach(juego => {
+        const li = document.createElement('li');
+        li.innerHTML = `${juego.titulo} - ${juego.precioFormateado} <button onclick="quitar(${juego.id})">❌</button>`;
+        listaCarrito.appendChild(li);
+        sumaTotal += juego.precio;
+    });
+
+    contador.innerText = carrito.length;
+    totalPrecioDisplay.innerText = sumaTotal.toLocaleString('es-CO');
+
+    if (carrito.length > 0) {
+        const btnComprar = document.createElement('button');
+        btnComprar.innerText = "Finalizar Compra";
+        btnComprar.className = "btn-comprar-final"; 
+        btnComprar.onclick = abrirCheckout;
+        listaCarrito.appendChild(btnComprar);
+    }
+}
+
+function abrirCheckout() {
+    const modal = document.getElementById('modal-pago');
+    modal.style.display = 'flex';
+}
+
+window.cerrarCheckout = function() {
+    document.getElementById('modal-pago').style.display = 'none';
+}
+
+document.getElementById('form-pago')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('¡Gracias por tu compra! Procesando pago...');
+    carrito = []; 
+    renderizarCarrito();
+    cerrarCheckout();
+    carritoContainer.style.display = 'none';
+});
+
+window.quitar = function(id) {
+    carrito = carrito.filter(juego => juego.id !== id);
+    renderizarCarrito();
+};
+
 
 

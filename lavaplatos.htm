@@ -790,12 +790,28 @@
     </footer>
 
     <script src="./carrito.js"></script>
-    <div id="fav-panel" class="side-panel">
-    <div class="panel-header">
-        <h2>Mis Favoritos</h2>
-        <button id="close-fav">×</button>
+
+<div id="modal-pago" style="display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center;">
+    <div style="background: #1a1a1a; color: white; padding: 20px; border-radius: 10px; width: 90%; max-width: 400px; border: 2px solid #08e408;">
+        <h2 style="color: #08e408;">Datos de Pago</h2>
+        <form id="form-pago">
+            <label>Nombre Completo:</label><br>
+            <input type="text" required style="width: 100%; margin-bottom: 10px;"><br>
+            
+            <label>Correo Electrónico:</label><br>
+            <input type="email" required style="width: 100%; margin-bottom: 10px;"><br>
+            
+            <label>Método de Pago:</label><br>
+            <select style="width: 100%; margin-bottom: 20px;">
+                <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                <option value="pse">PSE</option>
+                <option value="paypal">PayPal</option>
+            </select><br>
+            
+            <button type="submit" style="background: #08e408; color: black; border: none; padding: 10px; width: 100%; cursor: pointer; font-weight: bold;">Confirmar Pedido</button>
+            <button type="button" onclick="cerrarCheckout()" style="background: transparent; color: white; border: none; width: 100%; margin-top: 10px; cursor: pointer;">Cancelar</button>
+        </form>
     </div>
-    <ul id="lista-favoritos"></ul>
 </div>
 </body>
 </html>
