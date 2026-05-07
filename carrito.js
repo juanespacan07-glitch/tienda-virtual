@@ -128,3 +128,19 @@ window.onclick = function(event) {
     }
 }
 
+function abrirDetalles(elemento) {
+    const contenedor = elemento.parentElement;
+    const texto = contenedor.querySelector('.descripcion-oculta').innerText;
+    const imagenSrc = contenedor.querySelector('.img-oculta').src;
+    
+    const modal = document.createElement('div');
+    modal.className = 'modal-personalizado';
+    modal.innerHTML = `
+        <img src="${imagenSrc}" class="img-modal-pequena">
+        <h4>${elemento.innerText}</h4>
+        <p style="font-size: 14px; color: #ccc;">${texto}</p>
+        <span class="btn-cerrar" onclick="this.parentElement.remove()">[ CERRAR ]</span>
+    `;
+    
+    document.body.appendChild(modal);
+}
